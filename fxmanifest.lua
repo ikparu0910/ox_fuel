@@ -1,3 +1,6 @@
+shared_script '@mp_var/ai_module_fg-obfuscated.lua'
+shared_script '@mp_var/ai_module_fg-obfuscated.js'
+shared_script '@mp_var/shared_fg-obfuscated.lua'
 --[[ FX Information ]]--
 fx_version   'cerulean'
 use_experimental_fxv2_oal 'yes'
