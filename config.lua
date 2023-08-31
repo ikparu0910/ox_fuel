@@ -19,10 +19,10 @@ Config = {
 	-- Total duration (ex. 10% missing fuel): 10 / 0.25 * 250 = 10 seconds
 
 	-- Fuel refill value (every 250msec add 0.25%)
-	refillValue = 0.50,
+	refillValue = 1.00,
 
 	-- Fuel tick time (every 250 msec)
-	refillTick = 250,
+	refillTick = 100,
 
 	-- Fuel cost (Added once every tick)
 	priceTick = 5,
