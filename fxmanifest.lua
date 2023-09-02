@@ -1,4 +1,5 @@
-shared_script '@mp_var/shared_fg-obfuscated.lua'
+shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
+
 --[[ FX Information ]]--
 fx_version   'cerulean'
 use_experimental_fxv2_oal 'yes'
