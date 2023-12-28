@@ -109,7 +109,6 @@ local function createBlip(station)
 	SetBlipScale(blip, 0.5)
 	SetBlipColour(blip, 6)
 	SetBlipAsShortRange(blip, true)
-	BeginTextCommandSetBlipName('STRING')
 	BeginTextCommandSetBlipName("STRING")
 	AddTextComponentString(locale('fuel_station_blip'))
 	EndTextCommandSetBlipName(blip)
@@ -148,14 +147,17 @@ CreateThread(function()
 
 										while pumpDistance < 3 do
 											if cache.vehicle then
-												DisplayHelpTextThisFrame('fuelLeaveVehicleText', false)
+												DisplayText(0.5, 0.965, locale('leave_vehicle'))
+												-- DisplayHelpTextThisFrame('fuelLeaveVehicleText', false)
 											elseif not isFueling then
 												local vehicleInRange = lastVehicle ~= 0 and #(GetEntityCoords(lastVehicle) - playerCoords) <= 3
 
 												if vehicleInRange then
-													DisplayHelpTextThisFrame('fuelHelpText', false)
+													DisplayText(0.5, 0.965, locale('fuel_help'))
+													-- DisplayHelpTextThisFrame('fuelHelpText', false)
 												elseif Config.petrolCan.enabled then
-													DisplayHelpTextThisFrame('petrolcanHelpText', false)
+													DisplayText(0.5, 0.965, locale('petrolcan_help'))
+													-- DisplayHelpTextThisFrame('petrolcanHelpText', false)
 												end
 											end
 
@@ -495,6 +497,20 @@ if Config.ox_target then
 	end
 end
 
-AddTextEntry('fuelHelpText', locale('fuel_help'))
-AddTextEntry('petrolcanHelpText', locale('petrolcan_help'))
-AddTextEntry('fuelLeaveVehicleText', locale('leave_vehicle'))
+AddTextEntry('fuelHelpText', "<FONT FACE='arial font'>" .. locale('fuel_help') .. "</FONT>")
+AddTextEntry('petrolcanHelpText', "<FONT FACE='arial font'>" .. locale('petrolcan_help') .. "</FONT>")
+AddTextEntry('fuelLeaveVehicleText', "<FONT FACE='arial font'>" .. locale('leave_vehicle') .. "</FONT>")
+
+
+
+function DisplayText(x, y, text)
+	local width = string.len(text) + 0.0
+	DrawRect(x, y + 0.015, width / 230, 0.03, 10, 10, 10, 200)
+	SetTextScale(0.4, 0.4)
+	SetTextProportional(true)
+	SetTextColour(255, 255, 255, 255)
+	SetTextCentre(true)
+	BeginTextCommandDisplayText('CUSTOM_STRING')
+	AddTextComponentSubstringPlayerName(text)
+	EndTextCommandDisplayText(x, y)
+end
