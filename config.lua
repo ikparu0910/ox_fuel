@@ -25,7 +25,7 @@ Config = {
 	refillTick = 250,
 
 	-- Fuel cost (Added once every tick)
-	priceTick = 5,
+	priceTick = 1,
 
 	-- Can durability loss per refillTick
 	durabilityTick = 1.3,
@@ -35,7 +35,7 @@ Config = {
 		enabled = true,
 		duration = 5000,
 		price = 1000,
-		refillPrice = 800,
+		refillPrice = 200
 	},
 
 	-- Fuel usage multiplier based on class (default 1.0)
