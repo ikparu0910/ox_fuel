@@ -1,3 +1,5 @@
+shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
+
 shared_script '@mp_var/shared_fg-obfuscated.lua'
 shared_script '@mp_var/ai_module_fg-obfuscated.lua'
 --[[ FX Information ]]
