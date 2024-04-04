@@ -1,22 +1,22 @@
 shared_script '@WaveShield/resource/waveshield.lua' --this line was automatically written by WaveShield
 
-shared_script '@mp_var/shared_fg-obfuscated.lua'
-shared_script '@mp_var/ai_module_fg-obfuscated.lua'
+
+
 --[[ FX Information ]]
-                       --
+--
 fx_version 'cerulean'
 use_experimental_fxv2_oal 'yes'
 lua54 'yes'
 game 'gta5'
 --[[ Resource Information ]]
-                             --
+--
 name 'ox_fuel'
 author 'Overextended'
 version '1.4.0'
 repository 'https://github.com/overextended/ox_fuel'
 description 'Fuel management system with ox_inventory support'
 --[[ Manifest ]]
-                 --
+--
 dependencies {
 	'ox_lib',
 	'ox_inventory',
